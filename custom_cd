@@ -1,0 +1,17 @@
+## Can be added to your .zshrc / .bashrc
+
+custom_cd() {
+  pwd > /tmp/pwd
+  if [ "$#" -eq 0 ]; then
+    pushd ~ > /dev/null
+  else
+    pushd "$1" > /dev/null
+    echo $PWD > /tmp/pwd
+  fi
+}
+
+alias cd='custom_cd'
+
+if [ -f /tmp/pwd ]; then
+  pushd "$(cat /tmp/pwd)" >/dev/null
+fi
