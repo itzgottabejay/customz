@@ -4,6 +4,7 @@ custom_cd() {
   pwd > /tmp/pwd
   if [ "$#" -eq 0 ]; then
     pushd ~ > /dev/null
+    echo $PWD > /tmp/pwd
   else
     pushd "$1" > /dev/null
     echo $PWD > /tmp/pwd
