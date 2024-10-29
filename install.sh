@@ -51,8 +51,16 @@ sudo ln -s /opt/tools/BloodHound-linux-x64/BloodHound /opt/programs/BloodHound
 sudo git clone https://github.com/urbanadventurer/username-anarchy.git /opt/tools
 sudo ln -s /opt/tools/username-anarchy/username-anarchy /opt/programs
 sudo git clone https://github.com/NetSPI/PowerUpSQL.git /opt/tools
-# install nuclei
-# install katana
+sudo wget -q https://github.com/projectdiscovery/nuclei/releases/download/v3.3.4/nuclei_3.3.4_linux_amd64.zip -P /tmp/Install
+sudo mv /tmp/Install/nuclei /opt/programs
+sudo chmod +x /opt/programs/nuclei
+sudo -q wget https://github.com/projectdiscovery/katana/releases/download/v1.1.0/katana_1.1.0_linux_amd64.zip -P /opt/Install
+sudo mv /opt/Install/katana /opt/programs
+sudo chmod +x /opt/programs/katana
+sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
+sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
+sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_windows_amd64.zip -P /opt/tools/ligolo/windows
+wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_windows_amd64.zip -P /opt/tools/windows
 
 # Installing pipx
 echo -n "Installing pipx and breaking system packages to do it"
