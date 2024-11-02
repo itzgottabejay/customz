@@ -3,25 +3,25 @@
 # Author: Jay
 
 
-echo -n "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented\n"
-echo -n "----\n"
-echo -n "deb https://deb.parrot.sh/parrot lory main contrib non-free non-free-firmware\n"
-echo -n "deb https://deb.parrot.sh/direct/parrot lory-security main contrib non-free non-free-firmware\n"
-echo -n "----\n"
-echo -n "Also comment out Backports as were not worried about bleeding edge features\n"
-echo -n "----\n"
-echo -n "deb https://deb.parrot.sh/parrot lory-backports main contrib non-free non-free-firmware\n"
+echo "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented"
+echo "----"
+echo "deb https://deb.parrot.sh/parrot lory main contrib non-free non-free-firmware"
+echo "deb https://deb.parrot.sh/direct/parrot lory-security main contrib non-free non-free-firmware"
+echo "----"
+echo "Also comment out Backports as were not worried about bleeding edge features"
+echo "----"
+echo "deb https://deb.parrot.sh/parrot lory-backports main contrib non-free non-free-firmware"
 echo " "
-echo -n "You have 10 seconds to quit if you need to do this, if not, update and upgrade will commence\n"
+echo "You have 10 seconds to quit if you need to do this, if not, update and upgrade will commence"
 sleep 10
-echo -n "Making your tools and programs dirs in /opt"
+echo "Making your tools and programs dirs in /opt"
 
 # Making tmp dir
-mkdir /tmp/toolsIntall
+sudo mkdir /tmp/toolsIntall
 
 # Making dirs in /opt
-sudo mkdir -p /opt/tools
-sudo mkdir -p /opt/programs
+sudo mkdir /opt/tools
+sudo mkdir /opt/programs
 # Update and Upgrade
 
 sudo apt-get update && sudo apt full-upgrade -y
@@ -63,7 +63,7 @@ sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/lig
 wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_windows_amd64.zip -P /opt/tools/windows
 
 # Installing pipx
-echo -n "Installing pipx and breaking system packages to do it"
+echo "Installing pipx and breaking system packages to do it"
 python3 -m pip install --user pipx --break-system-packages
 pipx ensurepath
 
