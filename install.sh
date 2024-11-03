@@ -2,7 +2,7 @@
 # Upgrade and Update script adding i3 and tools
 # Author: Jay
 
-
+whoami > /tmp/who
 echo "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented"
 echo "----"
 echo "deb https://deb.parrot.sh/parrot lory main contrib non-free non-free-firmware"
@@ -17,7 +17,7 @@ sleep 10
 echo "Making your tools and programs dirs in /opt"
 
 # Making tmp dir
-sudo mkdir /tmp/toolsIntall
+sudo mkdir /tmp/toolsInstall
 
 # Making dirs in /opt
 sudo mkdir /opt/tools
@@ -33,7 +33,7 @@ sudo apt-get install -y arandr flameshot arc-theme feh i3blocks i3status i3 i3-w
 sudo apt-get install -y libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev autoconf meson
 sudo apt-get install -y libxcb-render-util0-dev libxcb-shape0-dev libxcb-xfixes0-dev
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
-npm install -g tldr
+sudo npm install -g tldr
 
 # Github Repos
 sudo wget -q https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.6/LaZagne.exe -P /usr/share/windows-resources/binaries
@@ -60,7 +60,7 @@ sudo chmod +x /opt/programs/katana
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_windows_amd64.zip -P /opt/tools/ligolo/windows
-wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_windows_amd64.zip -P /opt/tools/windows
+sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_windows_amd64.zip -P /opt/tools/windows
 
 # Installing pipx
 echo "Installing pipx and breaking system packages to do it"
@@ -75,10 +75,11 @@ pipx install 'git+https://github.com/ScorpionesLabs/MSSqlPwner.git'
 echo -n "include /usr/share/nano/*.nanorc" > ~/.nanorc
 
 # Add to Path
-export PATH=$PATH:/opt/programs
-source /home/jaybit/.zshrc
+echo "Adding Path"
+echo "export PATH=$PATH:/opt/programs" | tee -a /home/
+source /home/$(cat /tmp/who)/.zshrc
 
 # Summary
-echo -n "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter\n"
-echo -n "You dont have to use i3, you can still use any other env\n"
-echo "Happy Hacking\n"
+echo -n "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter"
+echo -n "You dont have to use i3, you can still use any other env"
+echo -n "Happy Hacking"
