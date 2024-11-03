@@ -34,19 +34,20 @@ sudo apt-get install -y libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev li
 sudo apt-get install -y libxcb-render-util0-dev libxcb-shape0-dev libxcb-xfixes0-dev
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
 sudo npm install -g tldr
+sudo npm fund
 
 # Github Repos
 sudo wget -q https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.6/LaZagne.exe -P /usr/share/windows-resources/binaries
 sudo wget -q https://github.com/SnaffCon/Snaffler/releases/download/1.0.170/Snaffler.exe -P /usr/share/windows-resources/binaries
-sudo wget -q https://github.com/TheWover/donut/releases/download/v1.0/donut_v1.0.tar.gz -P /tmp/Install && sudo tar vzxf /tmp/Install/donut_v1.0.tar.gz
-sudo mv /tmp/toolsInstall/donut/donut /opt/programs && sudo chmod +x /opt/programs/donut
+sudo wget -q https://github.com/TheWover/donut/releases/download/v1.0/donut_v1.0.tar.gz -P /tmp/Install && sudo tar zxf /tmp/Install/donut_v1.0.tar.gz
+sudo mv /tmp/Install/donut_v1.0.tar.gz/donut /opt/programs && sudo chmod +x /opt/programs/donut
 sudo git clone https://github.com/XiaoliChan/LDAPShell.git /opt/tools
 sudo ln -s /opt/tools/LDAPShell/ldapshell.py /opt/programs/ldapshell
 sudo wget -q https://github.com/flozz/p0wny-shell/raw/refs/heads/master/shell.php -P /opt/tools
 sudo wget -q https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 -P /opt/programs
 sudo mv /opt/programs/kerbrute_linux_amd64 /opt/programs/kerbrute && sudo chmod +x /opt/programs/kerbrute
 sudo wget -q https://github.com/BloodHoundAD/BloodHound/releases/download/v4.3.1/BloodHound-linux-x64.zip -P /opt/tools && sudo unzip /opt/tools/BloodHound-linux-x64.zip
-sudo mv /tmp/toolsInstall/BloodHound-linux-x64 /opt/tools
+sudo mv /tmp/Install/BloodHound-linux-x64 /opt/tools
 sudo ln -s /opt/tools/BloodHound-linux-x64/BloodHound /opt/programs/BloodHound
 sudo git clone https://github.com/urbanadventurer/username-anarchy.git /opt/tools
 sudo ln -s /opt/tools/username-anarchy/username-anarchy /opt/programs
@@ -77,7 +78,7 @@ echo "include /usr/share/nano/*.nanorc" >> ~/.nanorc
 # Add to Path
 echo "Adding Path"
 echo "export PATH=$PATH:/opt/programs" | tee -a /home/$(cat /tmp/who)/.zshrc
-source /home/$(cat /tmp/who)/.zshrc
+source "/home/$(cat /tmp/who)/.zshrc"
 
 # Summary
 echo "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter"
