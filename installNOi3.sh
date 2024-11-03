@@ -3,21 +3,22 @@
 # Author: Jay
 
 
-echo -n "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented\n"
-echo -n "----\n"
-echo -n "deb https://deb.parrot.sh/parrot lory main contrib non-free non-free-firmware\n"
-echo -n "deb https://deb.parrot.sh/direct/parrot lory-security main contrib non-free non-free-firmware\n"
-echo -n "----\n"
-echo -n "Also comment out Backports as were not worried about bleeding edge features\n"
-echo -n "----\n"
-echo -n "deb https://deb.parrot.sh/parrot lory-backports main contrib non-free non-free-firmware\n"
+whoami > /tmp/who
+echo "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented"
+echo "----"
+echo "deb https://deb.parrot.sh/parrot lory main contrib non-free non-free-firmware"
+echo "deb https://deb.parrot.sh/direct/parrot lory-security main contrib non-free non-free-firmware"
+echo "----"
+echo "Also comment out Backports as were not worried about bleeding edge features"
+echo "----"
+echo "deb https://deb.parrot.sh/parrot lory-backports main contrib non-free non-free-firmware"
 echo " "
-echo -n "You have 10 seconds to quit if you need to do this, if not, update and upgrade will commence\n"
+echo "You have 10 seconds to quit if you need to do this, if not, update and upgrade will commence"
 sleep 10
-echo -n "Making your tools and programs dirs in /opt"
+echo "Making your tools and programs dirs in /opt"
 
 # Making tmp dir
-mkdir -p /tmp/Install
+sudo mkdir -p /tmp/Install
 
 # Making dirs in /opt
 sudo mkdir -p /opt/tools
@@ -33,7 +34,7 @@ echo -n "Installing some Goodies!!"
 sudo apt-get install -y wget curl git thunar cmake 
 sudo apt-get install -y arandr flameshot arc-theme feh  i3status python3-pip rofi unclutter cargo compton imagemagick
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
-npm install -g tldr
+sudo npm install -g tldr
 
 # Github Repos and Things
 sudo wget -q https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.6/LaZagne.exe -P /usr/share/windows-resources/binaries
@@ -60,10 +61,10 @@ sudo chmod +x /opt/programs/katana
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_windows_amd64.zip -P /opt/tools/ligolo/windows
-wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_windows_amd64.zip -P /opt/tools/windows
+sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_windows_amd64.zip -P /opt/tools/windows
 
 # Installing pipx
-echo -n "Installing pipx and breaking system packages to do it"
+echo "Installing pipx and breaking system packages to do it"
 python3 -m pip install --user pipx --break-system-packages
 pipx ensurepath
 
@@ -72,12 +73,13 @@ pipx install bloodhound-python
 pipx install 'git+https://github.com/ScorpionesLabs/MSSqlPwner.git'
 
 # Nano Syntax Highlighting
-echo -n "include /usr/share/nano/*.nanorc" > ~/.nanorc
+echo "include /usr/share/nano/*.nanorc" > ~/.nanorc
 
 # Add to Path
-export PATH=$PATH:/opt/programs
+echo "Adding Path"
+echo "export PATH=$PATH:/opt/programs" >> /home/$(cat /tmp/who)/.zshrc
 source /home/jaybit/.zshrc
 
 # Summary
-echo -n "All upgraded\n"
-echo -n "Happy Hacking\n"
+echo "All upgraded"
+echo "Happy Hacking"
