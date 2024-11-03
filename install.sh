@@ -53,10 +53,10 @@ sudo git clone https://github.com/urbanadventurer/username-anarchy.git /opt/tool
 sudo ln -s /opt/tools/username-anarchy/username-anarchy /opt/programs
 sudo git clone https://github.com/NetSPI/PowerUpSQL.git /opt/tools
 sudo wget -q https://github.com/projectdiscovery/nuclei/releases/download/v3.3.4/nuclei_3.3.4_linux_amd64.zip -P /tmp/Install && unzip /tmp/Install/nuclei_3.3.4_linux_amd64.zip
-sudo mv /tmp/Install/nuclei /opt/programs
+sudo mv /tmp/Install/nuclei_3.3.4_linux_amd64/nuclei /opt/programs
 sudo chmod +x /opt/programs/nuclei
 sudo wget -q https://github.com/projectdiscovery/katana/releases/download/v1.1.0/katana_1.1.0_linux_amd64.zip -P /opt/Install/ && unzip /tmp/Install/katana_1.1.0_linux_amd64.zip
-sudo mv /opt/Install/katana /opt/programs
+sudo mv /opt/Install/katana_1.1.0_linux_amd64/katana /opt/programs
 sudo chmod +x /opt/programs/katana
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_proxy_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
