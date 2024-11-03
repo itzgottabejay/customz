@@ -72,6 +72,8 @@ cp .fehbg ~/.fehbg
 cp .config/i3/clipboard_fix.sh ~/.config/i3/clipboard_fix.sh
 cp -r .wallpaper ~/.wallpaper 
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Github Repos
 sudo wget -q https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.6/LaZagne.exe -P /usr/share/windows-resources/binaries
 sudo wget -q https://github.com/SnaffCon/Snaffler/releases/download/1.0.170/Snaffler.exe -P /usr/share/windows-resources/binaries
@@ -117,6 +119,6 @@ echo "export PATH=$PATH:/opt/programs" | tee -a /home/$(cat /tmp/who)/.zshrc
 source "/home/$(cat /tmp/who)/.zshrc"
 
 # Summary
-echo "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter"
-echo "You dont have to use i3, you can still use any other env"
+printf "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter\n"
+printf "You dont have to use i3, you can still use any other env\n"
 echo "Happy Hacking"
