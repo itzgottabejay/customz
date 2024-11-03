@@ -17,7 +17,7 @@ sleep 10
 echo "Making your tools and programs dirs in /opt"
 
 # Making tmp dir
-sudo mkdir -p /tmp/toolsInstall
+sudo mkdir -p /tmp/Install
 
 # Making dirs in /opt
 sudo mkdir -p /opt/tools
@@ -38,23 +38,23 @@ sudo npm install -g tldr
 # Github Repos
 sudo wget -q https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.6/LaZagne.exe -P /usr/share/windows-resources/binaries
 sudo wget -q https://github.com/SnaffCon/Snaffler/releases/download/1.0.170/Snaffler.exe -P /usr/share/windows-resources/binaries
-sudo wget -q https://github.com/TheWover/donut/releases/download/v1.0/donut_v1.0.tar.gz -P /tmp/toolsInstall
+sudo wget -q https://github.com/TheWover/donut/releases/download/v1.0/donut_v1.0.tar.gz -P /tmp/Install && sudo tar vzxf /tmp/Install/donut_v1.0.tar.gz
 sudo mv /tmp/toolsInstall/donut/donut /opt/programs && sudo chmod +x /opt/programs/donut
 sudo git clone https://github.com/XiaoliChan/LDAPShell.git /opt/tools
 sudo ln -s /opt/tools/LDAPShell/ldapshell.py /opt/programs/ldapshell
 sudo wget -q https://github.com/flozz/p0wny-shell/raw/refs/heads/master/shell.php -P /opt/tools
 sudo wget -q https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 -P /opt/programs
 sudo mv /opt/programs/kerbrute_linux_amd64 /opt/programs/kerbrute && sudo chmod +x /opt/programs/kerbrute
-sudo wget -q https://github.com/BloodHoundAD/BloodHound/releases/download/v4.3.1/BloodHound-linux-x64.zip -P /opt/tools
+sudo wget -q https://github.com/BloodHoundAD/BloodHound/releases/download/v4.3.1/BloodHound-linux-x64.zip -P /opt/tools && sudo unzip /opt/tools/BloodHound-linux-x64.zip
 sudo mv /tmp/toolsInstall/BloodHound-linux-x64 /opt/tools
 sudo ln -s /opt/tools/BloodHound-linux-x64/BloodHound /opt/programs/BloodHound
 sudo git clone https://github.com/urbanadventurer/username-anarchy.git /opt/tools
 sudo ln -s /opt/tools/username-anarchy/username-anarchy /opt/programs
 sudo git clone https://github.com/NetSPI/PowerUpSQL.git /opt/tools
-sudo wget -q https://github.com/projectdiscovery/nuclei/releases/download/v3.3.4/nuclei_3.3.4_linux_amd64.zip -P /tmp/Install
+sudo wget -q https://github.com/projectdiscovery/nuclei/releases/download/v3.3.4/nuclei_3.3.4_linux_amd64.zip -P /tmp/Install && unzip /tmp/Install/nuclei_3.3.4_linux_amd64.zip
 sudo mv /tmp/Install/nuclei /opt/programs
 sudo chmod +x /opt/programs/nuclei
-sudo wget -q https://github.com/projectdiscovery/katana/releases/download/v1.1.0/katana_1.1.0_linux_amd64.zip -P /opt/Install
+sudo wget -q https://github.com/projectdiscovery/katana/releases/download/v1.1.0/katana_1.1.0_linux_amd64.zip -P /opt/Install/ && unzip /tmp/Install/katana_1.1.0_linux_amd64.zip
 sudo mv /opt/Install/katana /opt/programs
 sudo chmod +x /opt/programs/katana
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
