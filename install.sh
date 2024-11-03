@@ -54,7 +54,7 @@ sudo git clone https://github.com/NetSPI/PowerUpSQL.git /opt/tools
 sudo wget -q https://github.com/projectdiscovery/nuclei/releases/download/v3.3.4/nuclei_3.3.4_linux_amd64.zip -P /tmp/Install
 sudo mv /tmp/Install/nuclei /opt/programs
 sudo chmod +x /opt/programs/nuclei
-sudo -q wget https://github.com/projectdiscovery/katana/releases/download/v1.1.0/katana_1.1.0_linux_amd64.zip -P /opt/Install
+sudo wget -q https://github.com/projectdiscovery/katana/releases/download/v1.1.0/katana_1.1.0_linux_amd64.zip -P /opt/Install
 sudo mv /opt/Install/katana /opt/programs
 sudo chmod +x /opt/programs/katana
 sudo wget -q https://github.com/nicocha30/ligolo-ng/releases/download/v0.6.2/ligolo-ng_agent_0.6.2_linux_amd64.tar.gz -P /opt/tools/ligolo
@@ -68,18 +68,18 @@ python3 -m pip install --user pipx --break-system-packages
 pipx ensurepath
 
 # Installing via pipx
-pipx install bloodhound-python
+pip install bloodhound-python
 pipx install 'git+https://github.com/ScorpionesLabs/MSSqlPwner.git'
 
 # Nano Syntax Highlighting
-echo -n "include /usr/share/nano/*.nanorc" > ~/.nanorc
+echo "include /usr/share/nano/*.nanorc" >> ~/.nanorc
 
 # Add to Path
 echo "Adding Path"
-echo "export PATH=$PATH:/opt/programs" | tee -a /home/
+echo "export PATH=$PATH:/opt/programs" | tee -a /home/$(cat /tmp/who)/.zshrc
 source /home/$(cat /tmp/who)/.zshrc
 
 # Summary
-echo -n "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter"
-echo -n "You dont have to use i3, you can still use any other env"
-echo -n "Happy Hacking"
+echo "All upgraded and i3 added, best to do a reboot, then log in using i3 as your destkop env, to open a term use either Option+Enter or WindowsKey+Enter"
+echo "You dont have to use i3, you can still use any other env"
+echo "Happy Hacking"
