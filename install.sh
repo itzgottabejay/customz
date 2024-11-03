@@ -17,11 +17,11 @@ sleep 10
 echo "Making your tools and programs dirs in /opt"
 
 # Making tmp dir
-sudo mkdir /tmp/toolsInstall
+sudo mkdir -p /tmp/toolsInstall
 
 # Making dirs in /opt
-sudo mkdir /opt/tools
-sudo mkdir /opt/programs
+sudo mkdir -p /opt/tools
+sudo mkdir -p /opt/programs
 # Update and Upgrade
 
 sudo apt-get update && sudo apt full-upgrade -y
