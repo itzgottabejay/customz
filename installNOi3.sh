@@ -1,5 +1,5 @@
 #!/bin/bash
-# Upgrade and Update script adding i3 and tools
+# Upgrade and Update adding tools
 # Author: Jay
 
 
