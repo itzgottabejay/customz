@@ -32,7 +32,7 @@ sudo apt-get update && sudo apt full-upgrade -y
 # Installing other tools (can add more)
 echo -n "Installing some Goodies!!"
 sudo apt-get install -y wget curl git thunar cmake 
-sudo apt-get install -y arandr flameshot arc-theme feh  i3status python3-pip rofi unclutter cargo compton imagemagick
+sudo apt-get install -y flameshot feh python3-pip unclutter cargo imagemagick
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
 sudo npm install -g tldr
 
@@ -40,7 +40,7 @@ sudo npm install -g tldr
 sudo wget -q https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.6/LaZagne.exe -P /usr/share/windows-resources/binaries
 sudo wget -q https://github.com/SnaffCon/Snaffler/releases/download/1.0.170/Snaffler.exe -P /usr/share/windows-resources/binaries
 sudo wget -q https://github.com/TheWover/donut/releases/download/v1.0/donut_v1.0.tar.gz -P /tmp/Install
-sudo mv /tmp/Install/donut/donut /opt/programs && sudo chmod +x /opt/programs/donut
+sudo mv /tmp/Install/donut_v1.0/donut /opt/programs && sudo chmod +x /opt/programs/donut
 sudo git clone https://github.com/XiaoliChan/LDAPShell.git /opt/tools
 sudo ln -s /opt/tools/LDAPShell/ldapshell.py /opt/programs/ldapshell
 sudo wget -q https://github.com/flozz/p0wny-shell/raw/refs/heads/master/shell.php -P /opt/tools
