@@ -112,6 +112,7 @@ export PATH=$PATH:/usr/sbin:/opt/programs:/home/jaybit/.local/bin:/home/jaybit/g
 # Aliases
 alias code='codium'
 alias open='thunar $1' # if on kali
+alias cd='custom_cd'
 # Variables
 export wpt='rasNClsDpxanFzYx30jrLGyHzWlfHvGO4aI31OvsfC4'
 # MyFunctions
@@ -126,7 +127,6 @@ mkt() {
 }
 
 ##
-
 custom_cd() {
   pwd > /tmp/pwd
   if [ "$#" -eq 0 ]; then
@@ -137,8 +137,6 @@ custom_cd() {
     echo $PWD > /tmp/pwd
   fi
 }
-
-alias cd='custom_cd'
 
 if [ -f /tmp/pwd ]; then
   pushd "$(cat /tmp/pwd)" >/dev/null
