@@ -111,6 +111,7 @@ export PATH=$PATH:/usr/sbin:/opt/programs:/home/jaybit/.local/bin:/home/jaybit/g
 
 # Aliases
 alias code='codium'
+alias open='thunar $1' # if on kali
 # Variables
 export wpt='rasNClsDpxanFzYx30jrLGyHzWlfHvGO4aI31OvsfC4'
 # MyFunctions
