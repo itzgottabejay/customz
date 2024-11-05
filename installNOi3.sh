@@ -4,7 +4,7 @@
 
 
 whoami > /tmp/who
-echo "IF YOUR USING PARROT OS"
+echo "IF YOUR USING PARROT OS IGNORE OTHERWISE"
 echo "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented"
 echo "----"
 echo "deb https://deb.parrot.sh/parrot lory main contrib non-free non-free-firmware"
