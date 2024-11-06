@@ -32,7 +32,7 @@ sudo apt-get update && sudo apt full-upgrade -y
 
 # Installing other tools (can add more)
 echo -n "Installing some Goodies!!"
-sudo apt-get install -y wget curl git thunar cmake 
+sudo apt-get install -y wget curl git thunar cmake npm 
 sudo apt-get install -y flameshot feh python3-pip unclutter cargo imagemagick
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
 sudo npm install -g tldr
@@ -71,7 +71,7 @@ echo "include /usr/share/nano/*.nanorc" > ~/.nanorc
 echo "Adding Path"
 #echo "export PATH=$PATH:/opt/programs" >> /home/$(cat /tmp/who)/.zshrc
 echo "export PATH=$PATH:/opt/programs" >> /root/.zshrc #if running as root
-source /home/jaybit/.zshrc
+source /root/.zshrc
 
 # Summary
 echo "All upgraded"
