@@ -4,6 +4,7 @@
 
 
 whoami > /tmp/who
+echo "SET FOR RUNNING AS ROOT (CHANGE IF NEEDED) You will be able to abort"
 echo "IF YOUR USING PARROT OS IGNORE OTHERWISE"
 echo "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented"
 echo "----"
