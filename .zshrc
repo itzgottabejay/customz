@@ -121,7 +121,7 @@ mkt() {
   echo "RootDirName: "
   #read dir 
   echo -e "Created Root Directory: $1"
-  mkdir -p $1/{Exploits,Evidence/{Findings,Scans/{Vuln,Service,Web,'AD Enumeration'},'Misc Files'}}
+  mkdir -p $1/{Exploits,Evidence/{Findings,Scans/{Vuln,Service,Web,AD_Enumeration},Misc_Files}}
   tree $1
   cd $1
 }
