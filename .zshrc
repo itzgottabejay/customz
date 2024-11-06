@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -106,26 +106,24 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=50000
 HISTFILESIZE=2000
 
-# PATH Config
-export PATH=$PATH:/usr/sbin:/opt/programs:/home/jaybit/.local/bin:/home/jaybit/go/bin:/home/jaybit/.local/lib/apache-maven-3.9.9/bin
-
 # Aliases
 alias code='codium'
+alias cd='custom_cd'
+alais open='thunar $1'
 # Variables
-export wpt='rasNClsDpxanFzYx30jrLGyHzWlfHvGO4aI31OvsfC4'
+
 # MyFunctions
-# mkt - Make Template Dir
+# mkt - Make Template Dir #
 mkt() {
   echo "RootDirName: "
   #read dir
   echo -e "Created Root Directory: $1"
-  mkdir -p $1/{Exploits,Evidence/{Findings,Scans/{Vuln,Service,Web,'AD Enumeration'},'Misc Files'}}
+  mkdir -p $1/{Exploits,Evidence/{Findings,Scans/{Vuln,Service,Web,AD_Enumeration},Misc_Files}}
   tree $1
   cd $1
 }
 
-##
-
+# Custom CD #
 custom_cd() {
   pwd > /tmp/pwd
   if [ "$#" -eq 0 ]; then
@@ -137,8 +135,10 @@ custom_cd() {
   fi
 }
 
-alias cd='custom_cd'
+
 
 if [ -f /tmp/pwd ]; then
   pushd "$(cat /tmp/pwd)" >/dev/null
 fi
+
+# PATH Config
