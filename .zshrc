@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=" YOUR THEME HERE "
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -111,22 +111,21 @@ export PATH=$PATH:/usr/sbin:/opt/programs:/home/jaybit/.local/bin:/home/jaybit/g
 
 # Aliases
 alias code='codium'
-alias open='thunar $1' # if on kali
-alias cd='custom_cd'
 # Variables
 export wpt='rasNClsDpxanFzYx30jrLGyHzWlfHvGO4aI31OvsfC4'
 # MyFunctions
 # mkt - Make Template Dir
 mkt() {
   echo "RootDirName: "
-  #read dir 
+  #read dir
   echo -e "Created Root Directory: $1"
-  mkdir -p $1/{Exploits,Evidence/{Findings,Scans/{Vuln,Service,Web,AD_Enumeration},Misc_Files}}
+  mkdir -p $1/{Exploits,Evidence/{Findings,Scans/{Vuln,Service,Web,'AD Enumeration'},'Misc Files'}}
   tree $1
   cd $1
 }
 
 ##
+
 custom_cd() {
   pwd > /tmp/pwd
   if [ "$#" -eq 0 ]; then
@@ -137,6 +136,8 @@ custom_cd() {
     echo $PWD > /tmp/pwd
   fi
 }
+
+alias cd='custom_cd'
 
 if [ -f /tmp/pwd ]; then
   pushd "$(cat /tmp/pwd)" >/dev/null
