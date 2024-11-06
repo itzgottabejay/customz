@@ -3,6 +3,7 @@
 # Author: Jay
 
 whoami > /tmp/who
+echo "SET FOR RUNNING AS ROOT (CHANGE IF NEEDED) You will be able to abort"
 echo "IF YOU'RE USING PARROT OS, IGNORE OTHERWISE"
 echo "Ensure your /etc/apt/sources.list.d/parrot.list has the lines uncommented"
 echo "----"
@@ -30,7 +31,7 @@ sudo apt-get update && sudo apt full-upgrade -y
 
 # Installing other tools (can add more)
 echo -n "Installing some Goodies!!"
-sudo apt-get install -y wget curl git thunar cmake 
+sudo apt-get install -y wget curl git thunar cmake npm
 sudo apt-get install -y flameshot feh python3-pip unclutter cargo imagemagick
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
 sudo npm install -g tldr
