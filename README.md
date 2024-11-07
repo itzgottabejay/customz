@@ -5,13 +5,14 @@
   `cat custom_cd >> .zshrc`
 
 ## zshrc 
-To add autosuggestions for autocomplete.
+Add autosuggestions and syntax-highlighting. 
 ```
 cd $ZSH_CUSTOM/plugins/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
+https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 Then add to your *.zshrc*.
 ```
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
