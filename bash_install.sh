@@ -33,7 +33,7 @@ sudo apt-get update && sudo apt full-upgrade -y
 
 # Installing other tools (can add more)
 echo -n "Installing some Goodies!!"
-sudo apt-get install -y wget curl git thunar cmake npm feroxbuster
+sudo apt-get install -y wget curl git thunar cmake npm feroxbuster seclists
 sudo apt-get install -y flameshot feh python3-pip unclutter cargo imagemagick
 sudo apt-get install -y cifs-utils netexec neo4j nfs-common krb5-user freerdp2-x11 ftp ffuf rlwrap exploitdb
 sudo npm install -g tldr
