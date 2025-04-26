@@ -1,4 +1,9 @@
 #!/bin/bash
+## Author: jay
+
+echo "Make sure you have zsh shell installed already: sudo apt-get install zsh"
+echo "If not you can exit now, install, then re-run the script"
+read -p "Press any key to continue..." -n1 -s
 
 sudo apt update && sudo apt upgrade -y
 
@@ -25,7 +30,7 @@ ninja
 sudo ninja install
 cd ../..
 
-pip3 install pywal
+pip3 install pywal --break-system-packages
 
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/compton
