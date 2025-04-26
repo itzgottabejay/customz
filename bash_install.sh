@@ -74,6 +74,7 @@ echo "include /usr/share/nano/*.nanorc" > ~/.nanorc
 echo "Adding Path"
 #echo "export PATH=$PATH:/opt/programs" >> /home/$(cat /tmp/who)/.zshrc
 echo "export PATH=$PATH:/opt/programs" >> /root/.zshrc #if running as root
+source /home/$(cat /tmp/who/)/.zshrc
 source /root/.zshrc
 
 # Summary
