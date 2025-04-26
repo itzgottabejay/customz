@@ -14,8 +14,8 @@ echo "Also comment out Backports as we're not worried about bleeding edge featur
 echo "----"
 echo "deb https://deb.parrot.sh/parrot lory-backports main contrib non-free non-free-firmware"
 echo " "
-echo "You have 10 seconds to quit if you need to do this, if not, update and upgrade will commence"
-sleep 10
+read -p "Press any key to continue..." -n1 -s
+echo " "
 echo "Making your tools and programs dirs in /opt"
 
 # Making tmp dir
@@ -76,7 +76,9 @@ echo "include /usr/share/nano/*.nanorc" > ~/.nanorc
 # Add to Path
 echo "Adding Path"
 echo "export PATH=\$PATH:/opt/programs" >> /root/.zshrc  # if running as root
+echo "export PATH=\$PATH:/opt/programs" >> /home/$(cat /tmp/who)/.zshrc
 
+source /home/$(cat /tmp/who)/.zshrc
 source /root/.zshrc
 # Summary
 echo "All upgraded"
